@@ -177,7 +177,7 @@ load_new_data()
 
 # COMMAND ----------
 
-load_new_data()
+load_new_data(all=True)
 
 # COMMAND ----------
 
@@ -191,3 +191,13 @@ for s in spark.streams.active:
     print("Stopping stream: " + s.id)
     s.stop()
     s.awaitTermination()
+
+# COMMAND ----------
+
+for s in spark.streams.active:
+    s.stop()
+    s.awaitTermination()
+
+# COMMAND ----------
+
+

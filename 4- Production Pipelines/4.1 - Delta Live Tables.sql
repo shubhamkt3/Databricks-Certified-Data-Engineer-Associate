@@ -24,6 +24,10 @@
 
 -- COMMAND ----------
 
+-- MAGIC %run ../Includes/Copy-Datasets
+
+-- COMMAND ----------
+
 CREATE OR REFRESH STREAMING LIVE TABLE orders_raw
 COMMENT "The raw books orders, ingested from orders-raw"
 AS SELECT * FROM cloud_files("${datasets_path}/orders-json-raw", "json",
